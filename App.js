@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
 export default function App() {
 
@@ -14,6 +14,18 @@ export default function App() {
       />
 
       <Text style={styles.luck}> Clique no botão abaixo e veja sua sorte do dia! </Text>
+
+      <TouchableOpacity style={styles.button}>
+        <View style={styles.areaButton}>
+          <Text style={styles.textButton}>Abrir biscoito!</Text>
+        </View>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={[styles.button, {marginTop: 15, borderColor: '#121212'}]}>
+        <View style={styles.areaButton}>
+          <Text style={[styles.textButton, {color:'#121212'}]}>Fechar Biscoito</Text>
+        </View>
+      </TouchableOpacity>
       
     </View>
   );
@@ -33,8 +45,25 @@ const styles = StyleSheet.create({
   luck:{
     fontSize: 18,
     color: '#dd7b22',
-    textAlign: 'center',
     margin: 30,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    textAlign: 'center',
+  },
+  button:{
+    width: 230,
+    height: 50, 
+    borderColor: '#dd7b22',
+    borderWidth: 2,
+    borderRadius: 50
+  },
+  areaButton:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  textButton:{
+    fontSize: 17,
+    fontWeight: 'bold',
+    color: '#dd7b22'
   }
 });
